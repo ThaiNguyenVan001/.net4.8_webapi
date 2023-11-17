@@ -15,7 +15,6 @@ dev_staging_spaon/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.
 *.props
 *.p7s
 *.md
-*.sln
 *.cache
 *.woff
 *.woff2
