@@ -29,6 +29,7 @@ jobs:
         restore_status=$?
         if [ $restore_status -ne 0 ]; then
           echo "status=failure" >> $GITHUB_ENV
+        fi
           
     - name: Build
       run: |
@@ -36,6 +37,7 @@ jobs:
         build_status=$?
         if [ $build_status -ne 0 ]; then
           echo "status=failure" >> $GITHUB_ENV
+        fi
           
     - name: Prevent push to main on failure
       if: env.status == 'failure'
