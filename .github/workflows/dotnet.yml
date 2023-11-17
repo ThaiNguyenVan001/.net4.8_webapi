@@ -22,8 +22,8 @@ jobs:
 
     - name: Restore dependencies
       run: |
-        nuget restore .net4.8_webapi\dev_staging_spaon\dev_staging_spaon.sln
+        nuget restore dev_staging_spaon
 
     - name: Build
       run: |
-        msbuild /p:Configuration=Release .net4.8_webapi\dev_staging_spaon\dev_staging_spaon.sln
+        msbuild /p:Configuration=Release dev_staging_spaon
