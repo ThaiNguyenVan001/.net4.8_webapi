@@ -27,7 +27,7 @@ jobs:
       run: |
         nuget restore dev_staging_spaon
         restore_status=$?
-        if [ $restore_status -ne 0 ]; then
+        if ( $restore_status -ne 0 ); then
           echo "status=failure" >> $GITHUB_ENV
         fi
           
@@ -35,7 +35,7 @@ jobs:
       run: |
         msbuild /p:Configuration=Release dev_staging_spaon
         build_status=$?
-        if [ $build_status -ne 0 ]; then
+        if ( $build_status -ne 0 ); then
           echo "status=failure" >> $GITHUB_ENV
         fi
           
