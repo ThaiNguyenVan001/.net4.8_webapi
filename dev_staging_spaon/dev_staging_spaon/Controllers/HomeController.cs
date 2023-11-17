@@ -11,7 +11,6 @@ namespace dev_staging_spaon.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
-            ***;
             return View();
         }
     }
