@@ -1,7 +1,5 @@
 
-*.config
 dev_staging_spaon/.vs/dev_staging_spaon/v16/.suo
-*.dll
 *.js
 *.nupkg
 *.css
