@@ -22,8 +22,8 @@ jobs:
 
     - name: Restore dependencies
       run: |
-        nuget restore
+        nuget restore dev_staging_spaon.sln
 
     - name: Build
       run: |
-        msbuild /p:Configuration=Release
+        msbuild /p:Configuration=Release dev_staging_spaon.sln
