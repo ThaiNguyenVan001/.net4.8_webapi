@@ -26,18 +26,20 @@ jobs:
     - name: Restore dependencies
       run: |
         nuget restore dev_staging_spaon
-        restore_status=$?
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           
     - name: Build
       run: |
         msbuild /p:Configuration=Release dev_staging_spaon
-        build_status=$?
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
         
     - name: Set build status
       run: |
-        if [ $restore_status -ne 0 ] || [ $build_status -ne 0 ]; then
-          echo "status=failure" >> $GITHUB_ENV
-        fi
+        if ($LASTEXITCODE -ne 0) {
+          echo "status=failure" >> $env:GITHUB_ENV
+        } else {
+          echo "status=success" >> $env:GITHUB_ENV
+        }
         
     - name: Prevent push to main on failure
       if: env.status == 'failure'
