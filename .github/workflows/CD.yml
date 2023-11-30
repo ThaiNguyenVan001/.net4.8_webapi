@@ -33,8 +33,4 @@ jobs:
         builder: ${{ steps.buldx.output.name }}
         push: true
         tags: ${{ secrets.DOCKER_USER_NAME }}/thai_yeu_huong
-
-    env:
-      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         
