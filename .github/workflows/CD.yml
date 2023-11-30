@@ -12,10 +12,6 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up QEMU
-      uses: docker/setup-qemu-action@v2
 
     - name: Set up Docker Buildx manually
       run: |
