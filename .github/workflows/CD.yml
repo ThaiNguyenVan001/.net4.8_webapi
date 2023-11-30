@@ -2,9 +2,9 @@ name: Docker Image
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "dev_staging" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "dev_staging" ]
 
 jobs:
   build-and-deploy:
